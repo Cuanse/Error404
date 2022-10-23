@@ -6,7 +6,7 @@ package javaapplication1;
 
 /**
  *
- * @author serre
+ * @author Sergio Esteban Rendón Umbarila
  */
 public class interfazprincipal extends javax.swing.JFrame {
 
