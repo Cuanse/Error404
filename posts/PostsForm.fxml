@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" prefWidth="321.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="487.0" minWidth="10.0" prefWidth="481.0" />
@@ -67,25 +67,44 @@
       </VBox>
       <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1">
          <children>
-            <Label text="Mis Posts">
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="450.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5px;">
+               <StackPane.margin>
+                  <Insets top="-20.0" />
+               </StackPane.margin>
+               <children>
+                  <Text layoutX="168.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reunión de hoy....">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font></Text>
+                  <Text layoutX="28.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="orem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas &quot;Letraset&quot;, las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum." wrappingWidth="414.767578125" />
+               </children>
+            </Pane>
+            <Label text="Posts" StackPane.alignment="CENTER">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font>
                <StackPane.margin>
-                  <Insets top="-50.0" />
+                  <Insets top="-320.0" />
+               </StackPane.margin>
+            </Label>
+            <Label text="Fecha:  16-10-22">
+               <StackPane.margin>
+                  <Insets right="250.0" top="250.0" />
                </StackPane.margin>
                <padding>
-                  <Insets left="-200.0" />
+                  <Insets right="100.0" />
                </padding>
             </Label>
-            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="450.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5px;">
+            <Label text="Autor: matesUN">
                <StackPane.margin>
-                  <Insets top="200.0" />
+                  <Insets top="250.0" />
                </StackPane.margin>
-               <children>
-                  <Text layoutX="34.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contenido de un post arbitrario" />
-               </children>
-            </Pane>
+            </Label>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="UN gusto">
+               <StackPane.margin>
+                  <Insets right="-300.0" top="250.0" />
+               </StackPane.margin>
+            </Button>
          </children>
       </StackPane>
    </children>
