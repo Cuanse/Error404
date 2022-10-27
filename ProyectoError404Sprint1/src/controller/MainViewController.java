@@ -42,13 +42,28 @@ public class MainViewController implements Initializable {
     }    
 
     @FXML
-    private void click(ActionEvent event) throws IOException {
+    private void SignIn(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/SignInForm.fxml"));
+        
+        Parent root = loader.load();
+        SignInFormController formulario = loader.getController();
+        
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(scene);
+        stage.showAndWait();
+    }
+
+    @FXML
+    private void SignUp(ActionEvent event) throws IOException {
         System.out.println("alfin");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/SignUpForm.fxml"));
         
         Parent root = loader.load();
         SignUpFormController formulario = loader.getController();
-        
+      
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         

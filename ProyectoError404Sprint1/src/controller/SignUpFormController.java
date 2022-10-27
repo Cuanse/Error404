@@ -52,6 +52,8 @@ public class SignUpFormController implements Initializable {
        if(txtPassword.getText().equals(txtConfrimPassword.getText())){
            Conexion bd = new Conexion();
            bd.setValues(txtUsuarioSignUp.getText(), txtPassword.getText(), "Carrera");
+       }else{
+           System.out.println("Las contraseñas no concuerdan");
        }
     }
     

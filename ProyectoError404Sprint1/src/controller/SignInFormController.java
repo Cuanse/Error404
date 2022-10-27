@@ -5,8 +5,11 @@
  */
 package controller;
 
+import Modelo.Conexion;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -44,5 +47,11 @@ public class SignInFormController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void LogIn(ActionEvent event) throws SQLException, ClassNotFoundException {
+        Conexion bd = new Conexion();
+        bd.SearchUser(txtUserSignIn.getText(), txtPasswordSignInMask.getText());
+    }
     
 }
