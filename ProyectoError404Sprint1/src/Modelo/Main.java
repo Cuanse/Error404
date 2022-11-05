@@ -5,7 +5,10 @@
  */
 package Modelo;
 
+import controller.MainViewController;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -21,15 +24,20 @@ import javafx.stage.Stage;
  * @author tique
  */
 public class Main extends Application {
-    
+
     @Override
-    public void start(Stage primaryStage) throws IOException {
-         Parent root = FXMLLoader.load(getClass().getResource("/Vista/MainView.fxml"));
-        
-        Scene scene = new Scene(root);
-        
-        primaryStage.setScene(scene);
-        primaryStage.show();
+    public void start(Stage primaryStage) throws IOException, SQLException, ClassNotFoundException {
+        System.out.println("Iniciando...");
+        try {
+            Conexion.getConexion();            
+            Parent root = FXMLLoader.load(getClass().getResource("/Vista/MainView.fxml"));
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException | ClassNotFoundException | SQLException ex) {
+            System.out.println("Servicio no disponible...");
+        }
+
     }
 
     /**
@@ -38,5 +46,5 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

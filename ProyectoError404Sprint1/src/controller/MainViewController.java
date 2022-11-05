@@ -5,8 +5,10 @@
  */
 package controller;
 
+import Modelo.Conexion;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,7 +27,7 @@ import javafx.stage.Stage;
  * @author tique
  */
 public class MainViewController implements Initializable {
-
+    private Connection bd;
     @FXML
     private Button btnSignIn;
     @FXML
@@ -39,6 +41,7 @@ public class MainViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        bd = Conexion.getBd();
     }    
 
     @FXML
@@ -58,7 +61,6 @@ public class MainViewController implements Initializable {
 
     @FXML
     private void SignUp(ActionEvent event) throws IOException {
-        System.out.println("alfin");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/SignUpForm.fxml"));
         
         Parent root = loader.load();
@@ -72,4 +74,14 @@ public class MainViewController implements Initializable {
         stage.showAndWait();
     }
     
+    
+    
+    public Connection getBd() {
+        return bd;
+    }
+
+    public void setBd(Connection bd) {
+        this.bd = bd;
+    }
+
 }
