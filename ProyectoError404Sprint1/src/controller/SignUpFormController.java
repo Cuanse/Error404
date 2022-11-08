@@ -31,6 +31,7 @@ import javafx.scene.layout.VBox;
  * @author tique
  */
 public class SignUpFormController implements Initializable {
+
     Alerta anuncio = new Alerta();
     private Connection bd;
     @FXML
@@ -55,33 +56,74 @@ public class SignUpFormController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         ArrayList<String> Carreras = new ArrayList<>();
-        Collections.addAll(Carreras, new String[]{"probando","1","2","3"});
+        Collections.addAll(Carreras, new String[]{
+            "Farmacia",
+            "Geología",
+            "Ciencias de la Computación",
+            "Química",
+            "Economía",
+            "Contaduría Pública",
+            "Administración de Empresas",
+            "Ingeniería Agronómica",
+            "Estudios Literarios",
+            "Filología e Idiomas",
+            "Filosofía",
+            "Español y Filología Clásica",
+            "Historia",
+            "Psicología",
+            "Lingüística",
+            "Sociología",
+            "Geografía",
+            "Trabajo Social",
+            "Derecho",
+            "Ciencia Política",
+            "Medicina",
+            "Medicina Veterinaria",
+            "Nutrición y Dietética",
+            "Fonoaudiología",
+            "Terapia Ocupacional",
+            "Fisioterapia",
+            "Odontología",
+            "Enfermería",
+            "Zootecnia",
+            "Ingeniería Agrícola",
+            "Ingeniería Civil",
+            "Ingeniería de Sistemas y Computación",
+            "Ingeniería Eléctrica",
+            "Ingeniería Electrónica",
+            "Ingeniería Industrial",
+            "Ingeniería Mecánica",
+            "Ingeniería Mecatrónica",
+            "Ingeniería Química"
+        });
         //cbCarreras.setItems(FXCollections.observableArrayList()); // No sé como emterle datos a ese comboBox tan raro
         cbCarreras.setItems(FXCollections.observableArrayList(Carreras));
-        
-    }    
-    private void setValues(Connection con ,String user, String password, String carrera) throws SQLException {
-        PreparedStatement ps = con.prepareStatement("INSERT INTO users values (?,?,?)");
+
+    }
+
+    private void setValues(Connection con, String user, String password, String carrera) throws SQLException {
+        PreparedStatement ps = con.prepareStatement("INSERT INTO USUARIO (NOMBREUSUARIO,PASSWORD,CARRERA) values (?,?,?)");
         ps.setString(1, user);
         ps.setString(2, password);
         ps.setString(3, carrera);
         ps.executeUpdate();
         System.out.println("Agregado correctamente");
     }
+
     @FXML
-    
+
     private void Register(ActionEvent event) throws SQLException, ClassNotFoundException {
-       if(txtPassword.getText().equals(txtConfrimPassword.getText())){
-           Connection bd = Conexion.getConexion();
-           setValues(bd,txtUsuarioSignUp.getText(), txtPassword.getText(), "Carrera");
-       }else{
-           anuncio.Error("Las contraseñas no concuerdan");
-       }
+        if (txtPassword.getText().equals(txtConfrimPassword.getText())) {
+            Connection bd = Conexion.getConexion();
+            setValues(bd, txtUsuarioSignUp.getText(), txtPassword.getText(), "Carrera");
+        } else {
+            anuncio.Error("Las contraseñas no concuerdan");
+        }
     }
 
     @FXML
     private void MostrarCarrerasComboBox(ActionEvent event) {
-        
+
     }
-    
+
 }

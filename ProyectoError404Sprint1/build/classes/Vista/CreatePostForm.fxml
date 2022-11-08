@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <GridPane prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreatePostFormController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="200.0" />
@@ -108,7 +107,7 @@
                               <Insets right="10.0" top="20.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="btnEnviarCrear" mnemonicParsing="false" style="-fx-background-color: #2ECC71; -fx-border-radius: 5px; -fx-border-color: black;" text="Enviar">
+                        <Button fx:id="btnEnviarCrear" mnemonicParsing="false" onMouseClicked="#EnviarPost" style="-fx-background-color: #2ECC71; -fx-border-radius: 5px; -fx-border-color: black;" text="Enviar">
                            <HBox.margin>
                               <Insets right="30.0" top="20.0" />
                            </HBox.margin>

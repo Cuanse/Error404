@@ -15,12 +15,14 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -29,6 +31,24 @@ import javafx.scene.layout.VBox;
  */
 public class SignInFormController implements Initializable {
     private Connection bd;
+    private static boolean AccesoConcedido = false; // SI ESTA VARIABLE ES TRUE es porque estoy testeando cosas, siempre debe ser false
+    private int noCredenciales;
+
+    public int getNoCredenciales() {
+        return noCredenciales;
+    }
+
+    public void setNoCredenciales(int noCredenciales) {
+        this.noCredenciales = noCredenciales;
+    }
+    public static boolean isAccesoConcedido() {
+        return AccesoConcedido;
+    }
+
+    public void setAccesoConcedido(boolean AccesoConcedido) {
+        this.AccesoConcedido = AccesoConcedido;
+    }
+    
     private Alerta anuncio = new Alerta();
     @FXML
     private VBox panelFormSignIn;
@@ -58,14 +78,17 @@ public class SignInFormController implements Initializable {
     private void SearchUser(String Username, String Password) throws SQLException, ClassNotFoundException {
         
         
-        ResultSet rs = bd.createStatement().executeQuery("SELECT * from users");
+        ResultSet rs = bd.createStatement().executeQuery("SELECT * from USUARIO");
         boolean encontrado = true;
         while (rs.next()) {
             encontrado = false;
-            if (rs.getString("UserName").equals(Username)) {
+            if (rs.getString("NOMBREUSUARIO").equals(Username)) {
                 encontrado = true;
-                if (rs.getString("Passwrd").equals(Password)) {
-                    /* Añadir código de ingreso de sesión e inicializacion de CreatePost Form y mandar la misma conexión "con"*/
+                if (rs.getString("PASSWORD").equals(Password)) {
+                    //Solo modificamos AccesoConcedido
+                    //Falta mandar las credenciales autorizadas
+                    AccesoConcedido = true;
+                    noCredenciales = rs.getInt("ID_USUARIO");
                     break;
                 } else {
                     anuncio.Information("Contraseña equivocada");
@@ -86,7 +109,9 @@ public class SignInFormController implements Initializable {
         }else{
             SearchUser(txtUserSignIn.getText(), txtPasswordSignInMask.getText());
         }
-        
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
     }
 
     @FXML

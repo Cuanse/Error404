@@ -5,15 +5,21 @@
         <group>
             <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Modelo/Perfil.java</file>
             <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/controller/CreatePostFormController.java</file>
+            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Vista/SignUpForm.fxml</file>
             <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/controller/PostsFormController.java</file>
+            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Vista/Perfil.fxml</file>
             <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/controller/MainViewController.java</file>
             <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Vista/CreatePostForm.fxml</file>
+            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Vista/AjustesPerfil.fxml</file>
+            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/controller/SignUpFormController.java</file>
             <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Modelo/Post.java</file>
             <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Modelo/Foro.java</file>
             <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Vista/MainView.fxml</file>
             <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Modelo/Conexion.java</file>
+            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/controller/PerfilController.java</file>
             <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Modelo/Usuario.java</file>
             <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/controller/SignInFormController.java</file>
+            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/controller/AjustesPerfilController.java</file>
             <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Vista/PostsForm.fxml</file>
             <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Modelo/Comentario.java</file>
             <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Modelo/Alerta.java</file>

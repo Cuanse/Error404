@@ -24,15 +24,15 @@ public class Conexion {
     
     public static Connection getConexion() throws SQLException, ClassNotFoundException {
         //String url = "jdbc:mysql://proyecto.cdpsawbnswbf.us-east-1.rds.amazonaws.com:3306/Proyecto";
-        String url= "jdbc:mysql://LocalHost:8081";
-        String user = "admin";
-        String clave = "12345678";
+        String url= "jdbc:mysql://LocalHost:3306/proyecto";
+        String user = "root";
+        String clave = "";
         /*try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
         }*/
-        //bd = DriverManager.getConnection(url, user, clave);
+        bd = DriverManager.getConnection(url, user, clave);
         return bd;
     }
 

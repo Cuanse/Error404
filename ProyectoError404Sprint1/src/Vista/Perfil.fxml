@@ -30,7 +30,7 @@
                   </Label>
                </children>
             </VBox>
-            <Button fx:id="btnInicioPerfil" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #2ECC71; -fx-border-radius: 5px;" text="Inicio" textFill="WHITE" VBox.vgrow="ALWAYS">
+            <Button fx:id="btnInicioPerfil" mnemonicParsing="false" onMouseClicked="#inicioPost" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #2ECC71; -fx-border-radius: 5px;" text="Inicio" textFill="WHITE" VBox.vgrow="ALWAYS">
                <font>
                   <Font size="24.0" />
                </font>
