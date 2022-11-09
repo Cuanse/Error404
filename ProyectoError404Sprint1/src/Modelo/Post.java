@@ -13,10 +13,10 @@ import java.sql.Timestamp;
 import java.util.Date;
 public class Post {
     
-    private String autor;
+    private String autor = "Nadie";
     private String titulo = "Blank";
-    private String contenido;
-    private Timestamp creacion;
+    private String contenido = "Orem Implus es la cosa de relleno para imprentas en los documentos...";
+    private Timestamp creacion = Timestamp.valueOf("2020-12-12 01:24:23");
 
     public String getTitulo() {
         return titulo;

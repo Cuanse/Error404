@@ -14,12 +14,22 @@ import java.lang.reflect.Array;
 public class Foro {
     
     private Post posts[] = new Post[10]; // Solo guardamos 10 porque son los Posts más recientes
+    private int ID;
     private String nombre;
     private String categoria;
     
-    public Foro(String nombre, String categoria){
+    public Foro(int ID,String nombre, String categoria){
+        this.ID = ID;
         this.nombre = nombre;
         this.categoria = categoria;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
     
     public Post[] getPosts() {

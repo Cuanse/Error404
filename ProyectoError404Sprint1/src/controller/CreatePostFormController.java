@@ -57,11 +57,12 @@ public class CreatePostFormController implements Initializable {
 
     @FXML
     private void EnviarPost(MouseEvent event) throws SQLException {
-        PreparedStatement ps = bd.prepareStatement("INSERT INTO POST (ID_PERFIL,ID_FORO,CONTENIDO,TITULO) VALUES(?,?,?,?)");
+        PreparedStatement ps = bd.prepareStatement("INSERT INTO POST (ID_PERFIL,ID_FORO,CONTENIDO,TITULO,ENABLED) VALUES(?,?,?,?,?)");
         ps.setInt(1, info.getNoCredenciales());
-        ps.setInt(2,info.getForoActual() );        
+        ps.setInt(2,info.getID_foroActual() );        
         ps.setString(3, txtTemaCrear.getText());
         ps.setString(4, txtNombreCrear.getText());
+        ps.setBoolean(5, true);
         ps.executeUpdate();
         System.out.println("Agregado correctamente");
         

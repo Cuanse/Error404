@@ -39,12 +39,46 @@ import javafx.stage.Stage;
 public class PostController implements Initializable {
 
     private Connection bd;
-    private Foro foros[];
+    private static Foro foros[];
     private Alerta alarma = new Alerta();
-    private int foroActual = 0; // Ojo NO es el Id_FORO , sino el foro en el arreglo foros
-    private int pagActual = 1;
-    SignInFormController info = new SignInFormController();
-    private int noCredenciales = info.getNoCredenciales();
+    private static int foroActual = 0; // Ojo NO es el Id_FORO , sino el foro en el arreglo foros
+    private static int ID_foroActual;
+    private static int pagActual = 1;
+    private static int postActual = 0;
+    static SignInFormController info = new SignInFormController();
+    private static int noCredenciales = info.getNoCredenciales();
+
+    public int getID_foroActual() {
+        return ID_foroActual;
+    }
+
+    public static void setID_foroActual(int ID_foroActual) {
+        PostController.ID_foroActual = ID_foroActual;
+    }
+
+    public int getPostActual() {
+        return postActual;
+    }
+
+    public static void setPostActual(int postActual) {
+        PostController.postActual = postActual;
+    }
+
+    public int getPagActual() {
+        return pagActual;
+    }
+
+    public static void setPagActual(int pagActual) {
+        PostController.pagActual = pagActual;
+    }
+
+    public Foro[] getForos() {
+        return foros;
+    }
+
+    public static void setForos(Foro[] foros) {
+        PostController.foros = foros;
+    }
 
     public int getNoCredenciales() {
         return noCredenciales;
@@ -103,13 +137,18 @@ public class PostController implements Initializable {
         // TODO
         bd = Conexion.getBd();
         System.out.println("bd Guardada bien");
-        System.out.println(info.getNoCredenciales());
         /* //probando unas cosas nada mas
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(PanePost.getScene());
         stage.show*/
 
+        //Cargar los primeros Posts de la primera página
+        LoadPosts(foroActual, (pagActual - 1) * 2);
+        ID_foroActual = foros[foroActual].getID();
+    }
+
+    private void LoadPosts(int foro, int page) { // Page es un int medio raro, porque debe ser un numero de ((Nopágina - 1)*2) para saber cual par de posts debe cargar
         int n = 3;
         //Código cuando tengamos bd SQL para contar cuantos foros existen
         ResultSet rs = null; // tocaba inicializarla en algo por los posibles errores
@@ -126,26 +165,27 @@ public class PostController implements Initializable {
         int i = 0; // contador que recorre los foros.
         try {
             /*Tecnicamente estamos cargando TODOS los foros y TODOS los posts que contienen, lo cual no es optimo pero que importa*/
- /*ALGO SUCEDE CON RS3 pero no se que es*/
             while (rs.next()) {
-                foros[i] = new Foro(rs.getString("Nombre"), rs.getString("Categoria"));
-                ResultSet rs2 = bd.createStatement().executeQuery("SELECT * FROM POST WHERE ID_FORO = " + rs.getInt("ID_FORO")); // quizá es getInt y falta sort by Date
-                ResultSet rs3 = bd.createStatement().executeQuery("SELECT COUNT(*) from (SELECT * FROM POST WHERE ID_FORO = " + rs.getString("ID_FORO") + ") as SUBQUERY");
-                //n = rs3.getInt("Count(*)"); 
-                n = 1;
+                foros[i] = new Foro(rs.getInt("ID_FORO"),rs.getString("Nombre"), rs.getString("Categoria"));
+                ResultSet rs2 = bd.createStatement().executeQuery("SELECT * FROM POST WHERE ENABLED = true and ID_FORO = " + rs.getInt("ID_FORO") + " ORDER BY ID_POST DESC  LIMIT 10"); // quizá es getInt y falta Order by Date en lugar de ID_post
+                ResultSet rs3 = bd.createStatement().executeQuery("SELECT COUNT(*) from (SELECT * FROM POST WHERE ENABLED = true and ID_FORO = " + rs.getInt("ID_FORO") + " ORDER BY ID_POST DESC  LIMIT 10" + ") as SUBQUERY");
+                rs3.next();
+                n = rs3.getInt("COUNT(*)");
+                //n = 1;
                 //System.out.println("SELECT COUNT(*) from (SELECT * FROM POST WHERE ID_FORO = " + rs.getString("ID_FORO")+") as SUBQUERY");
                 //System.out.print(rs3.getInt("COUNT(*)"));
                 if (n == 0) {
                     alarma.Information("No hay Posts en este foro: " + rs.getString("Nombre"));
                 } else {
                     Post posts[] = new Post[10];
-
                     // Ingresamos los posts máximo 10
                     for (int j = 0; j < 10; j++) {
                         posts[j] = new Post();
                         if (rs2.next()) {
+                            rs3 = bd.createStatement().executeQuery("SELECT * FROM USUARIO WHERE ID_USUARIO = " + rs2.getInt("ID_PERFIL"));
+                            rs3.next();
                             posts[j].setTitulo(rs2.getString("TITULO"));
-                            posts[j].setAutor("Autor");
+                            posts[j].setAutor("Autor-" + rs3.getString("NOMBREUSUARIO"));
                             posts[j].setContenido(rs2.getString("CONTENIDO"));
                             posts[j].setCreacion(rs2.getTimestamp("CREADOPOST")); // todavia no sé como Diana lo puso en la bd tan raro pero ok
                         }
@@ -156,23 +196,17 @@ public class PostController implements Initializable {
                 i++;
             }
 
-            //Cargar los primeros Posts de la primera página
-            LoadPosts(foroActual, (pagActual - 1) * 2);
         } catch (SQLException ex) {
             Logger.getLogger(PostController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-    }
-
-    private void LoadPosts(int foro, int page) { // Page es un int medio raro, porque debe ser un numero de ((Nopágina - 1)*2) para saber cual par de posts debe cargar
-        int n = foros[foro].getPosts().length;
-        if (n == 0) {
+        int cant = foros[foro].getPosts().length;
+        if (cant == 0) {
             alarma.Information("Este foro no tiene Posts");
-        } else if (n == 1) {
+        } else if (cant == 1) {
             lblTittlePost1.setText(foros[foro].getPosts()[page].getTitulo());
             lblTextPost1.setText(foros[foro].getPosts()[page].getContenido());
         } else {
-            lblTittlePost1.setText(foros[foro].getPosts()[page].getTitulo()); // En cada pagina caben 2 posts, pero si no hay 2 posts ó más toca omitir codigo.
+            lblTittlePost1.setText(foros[foro].getPosts()[page].getTitulo()); // En cada pagina caben 2 posts, pero si no hay mas de 2 posts toca omitir codigo.
             lblTittlePost2.setText(foros[foro].getPosts()[page + 1].getTitulo());
 
             lblTextPost1.setText(foros[foro].getPosts()[page].getContenido());
@@ -180,12 +214,23 @@ public class PostController implements Initializable {
         }
     }
 
-    @FXML
-    private void Clicked(MouseEvent event) {
+    private void ReadPost(int posicion) throws IOException {
+        postActual = posicion;
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/PostsForm.fxml"));
+
+        Parent root = loader.load();
+
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(scene);
+        stage.showAndWait();
     }
 
     @FXML
-    private void Vbox1Clicked(MouseEvent event) {
+    private void Vbox1Clicked(MouseEvent event) throws IOException {
+        ReadPost(0);
     }
 
     @FXML
@@ -215,7 +260,62 @@ public class PostController implements Initializable {
         stage.setScene(scene);
         stage.showAndWait();
         alarma.Information("Gracias Por la publicación");
-        LoadPosts(foroActual, 0);
+        LoadPosts(foroActual, (pagActual - 1) * 2);
+    }
+
+    @FXML
+    private void Vbox2Clicked(MouseEvent event) throws IOException {
+        ReadPost(1);
+    }
+
+    @FXML
+    private void Prev(MouseEvent event) {
+        if (pagActual == 1) {
+            pagActual = 5;
+        } else {
+            pagActual = (pagActual - 1) % 6;
+        }
+        LoadPosts(foroActual, (pagActual - 1) * 2);
+    }
+
+    @FXML
+    private void Next(MouseEvent event) {
+        if (pagActual == 5) {
+            pagActual = 1;
+        } else {
+            pagActual = (pagActual + 1) % 6;
+        }
+        LoadPosts(foroActual, (pagActual - 1) * 2);
+    }
+
+    @FXML
+    private void pag1(MouseEvent event) {
+        pagActual = 1;
+        LoadPosts(foroActual, (pagActual - 1) * 2);
+    }
+
+    @FXML
+    private void pag2(MouseEvent event) {
+        pagActual = 2;
+        LoadPosts(foroActual, (pagActual - 1) * 2);
+    }
+
+    @FXML
+    private void pag3(MouseEvent event) {
+        pagActual = 3;
+        LoadPosts(foroActual, (pagActual - 1) * 2);
+    }
+
+    @FXML
+    private void pag4(MouseEvent event) {
+        pagActual = 4;
+        LoadPosts(foroActual, (pagActual - 1) * 2);
+    }
+
+    @FXML
+    private void pag5(MouseEvent event) {
+        pagActual = 5;
+        LoadPosts(foroActual, (pagActual - 1) * 2);
     }
 
 }

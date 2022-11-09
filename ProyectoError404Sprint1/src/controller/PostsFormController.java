@@ -5,6 +5,7 @@
  */
 package controller;
 
+import Modelo.Conexion;
 import java.net.URL;
 import java.sql.Connection;
 import java.util.ResourceBundle;
@@ -20,6 +21,7 @@ import javafx.scene.text.Text;
  */
 public class PostsFormController implements Initializable {
     private Connection bd;
+    PostController info = new PostController();
     @FXML
     private Text txtTitle;
     @FXML
@@ -34,7 +36,13 @@ public class PostsFormController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        bd = Conexion.getBd();
+        System.out.println("bd Guardada bien");    
+        int n = info.getPostActual();
+        txtTitle.setText(info.getForos()[info.getForoActual()].getPosts()[((info.getPagActual()-1)*2)+n].getTitulo());
+        txtContent.setText(info.getForos()[info.getForoActual()].getPosts()[((info.getPagActual()-1)*2)+n].getContenido());
+        lblDate.setText(info.getForos()[info.getForoActual()].getPosts()[((info.getPagActual()-1)*2)+n].getCreacion().toString());
+        lblAutor.setText(info.getForos()[info.getForoActual()].getPosts()[((info.getPagActual()-1)*2)+n].getAutor());
     }    
     
 }

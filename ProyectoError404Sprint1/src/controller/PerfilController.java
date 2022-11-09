@@ -33,7 +33,7 @@ import javafx.stage.Stage;
  */
 public class PerfilController implements Initializable {
 
-    SignInFormController info = new SignInFormController();
+    static SignInFormController info = new SignInFormController();
     private Connection bd;
     @FXML
     private Button btnInicioPerfil;

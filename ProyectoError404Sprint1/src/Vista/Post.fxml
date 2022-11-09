@@ -90,12 +90,12 @@
                   </Button>
                   <HBox alignment="BOTTOM_RIGHT" prefHeight="73.0" prefWidth="126.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <Button fx:id="btnPrevPost" mnemonicParsing="false" style="-fx-background-color: white; -fx-border-radius: 5px; -fx-border-color: black;" text="Prev">
+                        <Button fx:id="btnPrevPost" mnemonicParsing="false" onMouseClicked="#Prev" style="-fx-background-color: white; -fx-border-radius: 5px; -fx-border-color: black;" text="Prev">
                            <HBox.margin>
                               <Insets bottom="3.0" right="3.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="btnNextPost" mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5px;" text="Next">
+                        <Button fx:id="btnNextPost" mnemonicParsing="false" onMouseClicked="#Next" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5px;" text="Next">
                            <HBox.margin>
                               <Insets bottom="3.0" right="10.0" />
                            </HBox.margin>
@@ -116,7 +116,7 @@
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <VBox onMouseClicked="#Clicked" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                        <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
                            <children>
                               <Label fx:id="lblTextPost1" text="Orem Implus es la cosa de relleno para imprentas en los documentos..." />
                            </children>
@@ -133,7 +133,7 @@
                   <Insets left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
                <children>
-                  <VBox alignment="TOP_CENTER" layoutX="1.0" prefHeight="158.0" prefWidth="589.0">
+                  <VBox alignment="TOP_CENTER" layoutX="1.0" onMouseClicked="#Vbox2Clicked" prefHeight="158.0" prefWidth="589.0">
                      <children>
                         <Label fx:id="lblTittlePost2" text="Titulo 2">
                            <font>
@@ -157,11 +157,11 @@
             </Pane>
             <HBox alignment="CENTER" prefHeight="54.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
                <children>
-                  <Label text="1" />
-                  <Label text="2" />
-                  <Label text="3" />
-                  <Label text="4" />
-                  <Label text="5" />
+                  <Label onMouseClicked="#pag1" prefHeight="17.0" prefWidth="12.0" text="1" />
+                  <Label onMouseClicked="#pag2" prefHeight="17.0" prefWidth="12.0" text="2" />
+                  <Label onMouseClicked="#pag3" prefHeight="17.0" prefWidth="12.0" text="3" />
+                  <Label onMouseClicked="#pag4" prefHeight="17.0" prefWidth="12.0" text="4" />
+                  <Label onMouseClicked="#pag5" prefHeight="17.0" prefWidth="12.0" text="5" />
                </children>
             </HBox>
          </children>

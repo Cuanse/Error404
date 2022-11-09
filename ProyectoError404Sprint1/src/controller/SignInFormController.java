@@ -43,7 +43,7 @@ public class SignInFormController implements Initializable {
         this.nombreUsuario = nombreUsuario;
     }
 
-    public int getNoCredenciales() {
+    public static int getNoCredenciales() {
         return noCredenciales;
     }
 
@@ -97,7 +97,6 @@ public class SignInFormController implements Initializable {
                     //Solo modificamos AccesoConcedido para que pueda continuar
                     AccesoConcedido = true;
                     noCredenciales = rs.getInt("ID_USUARIO");
-                    System.out.println(noCredenciales);
                     nombreUsuario = rs.getString("NOMBREUSUARIO");
                     break;
                 } else {
