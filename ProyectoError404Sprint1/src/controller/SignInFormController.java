@@ -32,7 +32,16 @@ import javafx.stage.Stage;
 public class SignInFormController implements Initializable {
     private Connection bd;
     private static boolean AccesoConcedido = false; // SI ESTA VARIABLE ES TRUE es porque estoy testeando cosas, siempre debe ser false
-    private int noCredenciales;
+    private static int noCredenciales;
+    private static String nombreUsuario;
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
 
     public int getNoCredenciales() {
         return noCredenciales;
@@ -85,10 +94,11 @@ public class SignInFormController implements Initializable {
             if (rs.getString("NOMBREUSUARIO").equals(Username)) {
                 encontrado = true;
                 if (rs.getString("PASSWORD").equals(Password)) {
-                    //Solo modificamos AccesoConcedido
-                    //Falta mandar las credenciales autorizadas
+                    //Solo modificamos AccesoConcedido para que pueda continuar
                     AccesoConcedido = true;
                     noCredenciales = rs.getInt("ID_USUARIO");
+                    System.out.println(noCredenciales);
+                    nombreUsuario = rs.getString("NOMBREUSUARIO");
                     break;
                 } else {
                     anuncio.Information("Contraseña equivocada");

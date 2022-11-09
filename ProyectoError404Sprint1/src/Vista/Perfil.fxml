@@ -80,7 +80,7 @@
             </Label>
             <HBox alignment="TOP_RIGHT" VBox.vgrow="ALWAYS">
                <children>
-                  <Button fx:id="btnAjustesPerfil" alignment="TOP_RIGHT" mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5px;" text="Ajustes">
+                  <Button fx:id="btnAjustesPerfil" alignment="TOP_RIGHT" mnemonicParsing="false" onMouseClicked="#ajustesPerfil" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5px;" text="Ajustes">
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>
@@ -255,6 +255,5 @@
             </VBox>
          </children>
       </VBox>
-      <HBox prefHeight="100.0" prefWidth="200.0" />
    </children>
 </GridPane>

@@ -3,12 +3,12 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-
 
 <Pane prefHeight="380.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AjustesPerfilController">
    <children>
@@ -24,7 +24,7 @@
             </Label>
             <HBox alignment="TOP_RIGHT" VBox.vgrow="ALWAYS">
                <children>
-                  <Button fx:id="btnAjustesPerfil" alignment="TOP_RIGHT" mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5px;" text="Guardar">
+                  <Button fx:id="btnAjustesPerfil" alignment="TOP_RIGHT" mnemonicParsing="false" onMouseClicked="#guardarPerfil" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5px;" text="Guardar">
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>
@@ -43,7 +43,7 @@
                               <Insets left="10.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField prefHeight="30.0" prefWidth="270.0" promptText="User123@unal.edu.co" style="-fx-border-radius: 5px;">
+                        <TextField fx:id="txtEmail" prefHeight="30.0" prefWidth="270.0" promptText="User123@unal.edu.co" style="-fx-border-radius: 5px;">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -69,6 +69,7 @@
                         <Insets left="60.0" />
                      </VBox.margin>
                   </Label>
+                  <TextArea fx:id="txtBiografia" prefHeight="54.0" prefWidth="555.0" />
                   <HBox VBox.vgrow="ALWAYS">
                      <children>
                         <Label text="Telefono:">
@@ -79,7 +80,7 @@
                               <Insets left="10.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField prefHeight="30.0" prefWidth="270.0" promptText="3191234567">
+                        <TextField fx:id="txtTelefono" prefHeight="30.0" prefWidth="270.0" promptText="3191234567">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -102,7 +103,7 @@
                               <Insets left="10.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField prefWidth="270.0" promptText="Cr 30 #45">
+                        <TextField fx:id="txtDireccion" prefWidth="270.0" promptText="Cr 30 #45">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -125,7 +126,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField prefWidth="270.0" promptText="M">
+                        <TextField fx:id="txtGenero" prefWidth="270.0" promptText="M">
                            <font>
                               <Font size="14.0" />
                            </font>

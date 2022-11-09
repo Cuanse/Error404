@@ -10,6 +10,7 @@ package Modelo;
  * @author tique
  */
 public class Comentario {
+    private int ID_USUARIO;
     private String autor;
     private String contenido;
 }

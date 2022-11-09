@@ -64,6 +64,7 @@ public class CreatePostFormController implements Initializable {
         ps.setString(4, txtNombreCrear.getText());
         ps.executeUpdate();
         System.out.println("Agregado correctamente");
+        
         Stage stage = new Stage();
         Node source = (Node) event.getSource();
         stage = (Stage) source.getScene().getWindow();
