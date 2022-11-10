@@ -73,7 +73,7 @@ public class AjustesPerfilController implements Initializable {
             ps.executeUpdate();
             System.out.println("Agregado PERFIL correctamente");
 
-            ResultSet rs = bd.createStatement().executeQuery("SELECT ID_PERFIL from PERFIL");
+            ResultSet rs = bd.createStatement().executeQuery("SELECT ID_PERFIL from PERFIL ORDER BY ID_PERFIL DESC");
             rs.next(); //por defecto diremos que es el último ingresado, igual no es como que varios usuarios vayan a llenar datos al mismo tiempo
             PreparedStatement ps1 = bd.prepareStatement("UPDATE USUARIO SET ID_PERFIL = ? WHERE ID_USUARIO = ?" );
             ps1.setString(1,rs.getString("ID_PERFIL"));

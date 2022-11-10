@@ -36,6 +36,7 @@ public class Main extends Application {
             primaryStage.show();
         } catch (IOException | ClassNotFoundException | SQLException ex) {
             System.out.println("Servicio no disponible...");
+            new Alerta().Error("Falta BD");
         }
 
     }

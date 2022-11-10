@@ -184,8 +184,9 @@ public class PostController implements Initializable {
                         if (rs2.next()) {
                             rs3 = bd.createStatement().executeQuery("SELECT * FROM USUARIO WHERE ID_USUARIO = " + rs2.getInt("ID_PERFIL"));
                             rs3.next();
+                            posts[j].setID_POST(rs2.getInt("ID_POST"));
                             posts[j].setTitulo(rs2.getString("TITULO"));
-                            posts[j].setAutor("Autor-" + rs3.getString("NOMBREUSUARIO"));
+                            posts[j].setAutor(/*"Autor-" +*/ rs3.getString("NOMBREUSUARIO"));
                             posts[j].setContenido(rs2.getString("CONTENIDO"));
                             posts[j].setCreacion(rs2.getTimestamp("CREADOPOST")); // todavia no sé como Diana lo puso en la bd tan raro pero ok
                         }
@@ -226,6 +227,7 @@ public class PostController implements Initializable {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.showAndWait();
+        LoadPosts(foroActual, (pagActual - 1) * 2);
     }
 
     @FXML

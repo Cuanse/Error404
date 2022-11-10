@@ -100,7 +100,7 @@
                   <Insets top="250.0" />
                </StackPane.margin>
             </Label>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="UN gusto">
+            <Button mnemonicParsing="false" onMouseClicked="#BorrarPost" prefHeight="25.0" prefWidth="106.0" text="Borrar Post">
                <StackPane.margin>
                   <Insets right="-300.0" top="250.0" />
                </StackPane.margin>
