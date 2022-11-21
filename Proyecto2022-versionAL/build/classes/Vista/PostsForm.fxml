@@ -122,7 +122,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-background-color: white;">
+            <Button mnemonicParsing="false" onMouseClicked="#leaveComment" style="-fx-background-color: white;">
                <StackPane.margin>
                   <Insets right="-300.0" top="250.0" />
                </StackPane.margin>
@@ -134,12 +134,12 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-background-color: white;">
+            <Button mnemonicParsing="false" onMouseClicked="#likeBtn" style="-fx-background-color: white;">
                <StackPane.margin>
                   <Insets right="-200.0" top="250.0" />
                </StackPane.margin>
                <graphic>
-                  <ImageView fitHeight="33.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="likeImg" fitHeight="33.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/icons8-facebook-like-skin-type-3-48.png" />
                      </image>

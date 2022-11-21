@@ -55,7 +55,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="btnAmigosPost" mnemonicParsing="false" onMouseClicked="#verPerfil" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #2ECC71; -fx-border-radius: 5px;" text="Amigos" textFill="WHITE">
+            <Button fx:id="btnAmigosPost" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #2ECC71; -fx-border-radius: 5px;" text="Amigos" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>

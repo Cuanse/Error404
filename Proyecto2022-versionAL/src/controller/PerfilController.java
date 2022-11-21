@@ -42,8 +42,6 @@ public class PerfilController implements Initializable {
     @FXML
     private Button btnCrearPerfil;
     @FXML
-    private Button btnAmigosPrfil;
-    @FXML
     private Button btnSalirPrfil;
     @FXML
     private Button btnAjustesPerfil;
@@ -103,7 +101,7 @@ public class PerfilController implements Initializable {
 
             lblTelefonoPerfil.setText(rs.getString("TELEFONO"));
             lblDirPerfil.setText(rs.getString("DIRECCION"));
-            lblGeneroPerfil.setText(rs.getString("TELEFONO"));
+            lblGeneroPerfil.setText(rs.getString("GENERO"));
         }
 
     }

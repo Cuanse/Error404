@@ -45,8 +45,17 @@ public class PostController implements Initializable {
     private static int ID_foroActual;
     private static int pagActual = 1;
     private static int postActual = 0;
+    private static int ID_postActual;
     static SignInFormController info = new SignInFormController();
     private static int noCredenciales = info.getNoCredenciales();
+
+    public int getID_postActual() {
+        return ID_postActual;
+    }
+
+    public static void setID_postActual(int ID_postActual) {
+        PostController.ID_postActual = ID_postActual;
+    }
 
     public int getID_foroActual() {
         return ID_foroActual;
@@ -102,8 +111,6 @@ public class PostController implements Initializable {
     private Button btnPerfilPost;
     @FXML
     private Button btnCrearPost;
-    @FXML
-    private Button btnAmigosPost;
     @FXML
     private Button btnSalirPost;
     @FXML
@@ -204,7 +211,9 @@ public class PostController implements Initializable {
         }
         int cant = foros[foro].getPosts().length;
         if (cant == 0) {
-            alarma.Information("Este foro no tiene Posts");
+            alarma.Information("Este foro no tiene Posts");            
+            lblTittlePost1.setText("Blank");
+            lblTextPost1.setText("");
         } else if (cant == 1) {
             lblTittlePost1.setText(foros[foro].getPosts()[page].getTitulo());
             lblTextPost1.setText(foros[foro].getPosts()[page].getContenido());
@@ -219,6 +228,7 @@ public class PostController implements Initializable {
 
     private void ReadPost(int posicion) throws IOException {
         postActual = posicion;
+        ID_postActual = foros[foroActual].getPosts()[((pagActual - 1) * 2)+posicion].getID_POST();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/PostsForm.fxml"));
 
         Parent root = loader.load();

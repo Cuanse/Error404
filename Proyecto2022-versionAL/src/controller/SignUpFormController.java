@@ -115,7 +115,7 @@ public class SignUpFormController implements Initializable {
     private void Register(ActionEvent event) throws SQLException, ClassNotFoundException {
         if (txtPassword.getText().equals(txtConfrimPassword.getText())) {
             Connection bd = Conexion.getConexion();
-            setValues(bd, txtUsuarioSignUp.getText(), txtPassword.getText(), "Carrera");
+            setValues(bd, txtUsuarioSignUp.getText(), txtPassword.getText(), cbCarreras.getValue().toString());
         } else {
             anuncio.Error("Las contraseñas no concuerdan");
         }

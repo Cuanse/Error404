@@ -13,7 +13,7 @@ import java.lang.reflect.Array;
  */
 public class Foro {
     
-    private Post posts[] = new Post[10]; // Solo guardamos 10 porque son los Posts más recientes
+    private Post posts[] = new Post[0]; // Solo guardamos 10 porque son los Posts más recientes
     private int ID;
     private String nombre;
     private String categoria;

@@ -8,6 +8,7 @@ package controller;
 import Modelo.Alerta;
 import Modelo.Conexion;
 import static controller.PerfilController.info;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,11 +16,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -38,6 +45,8 @@ public class PostsFormController implements Initializable {
     private Label lblDate;
     @FXML
     private Label lblAutor;
+    @FXML
+    private ImageView likeImg;
 
     /**
      * Initializes the controller class.
@@ -51,6 +60,8 @@ public class PostsFormController implements Initializable {
         txtContent.setText(info.getForos()[info.getForoActual()].getPosts()[((info.getPagActual()-1)*2)+n].getContenido());
         lblDate.setText(info.getForos()[info.getForoActual()].getPosts()[((info.getPagActual()-1)*2)+n].getCreacion().toString());
         lblAutor.setText(info.getForos()[info.getForoActual()].getPosts()[((info.getPagActual()-1)*2)+n].getAutor());
+        
+        
     }    
 
     @FXML
@@ -69,6 +80,30 @@ public class PostsFormController implements Initializable {
         }else{
             new Alerta().Information("NO eres Admin o el dueño del post");
         }
+    }
+
+    @FXML
+    private void leaveComment(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/comentariosPost.fxml"));
+
+        Parent root = loader.load();
+
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(scene);
+        stage.showAndWait();
+    }
+
+    @FXML
+    private void likeBtn(MouseEvent event) throws SQLException {        
+        PreparedStatement ps = bd.prepareStatement("INSERT INTO LIKES (ID_USUARIO,ID_POST) values (?,?)");
+        ps.setInt(1, info.getNoCredenciales()); // enviamos ID_USUARIO
+        ps.setInt(2, info.getID_postActual()); // enviamos ID_POST
+        ps.executeUpdate();
+        Image image=new Image("/img/icons8-facebook-like-skin-type-3-48-iluminated.png");
+        likeImg.setImage(image);
     }
     
 }

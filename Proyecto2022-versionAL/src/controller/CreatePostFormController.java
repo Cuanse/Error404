@@ -36,8 +36,6 @@ public class CreatePostFormController implements Initializable {
     @FXML
     private Button btnCrearCrear;
     @FXML
-    private Button btnAmigosCrear;
-    @FXML
     private Button btnSalirCrear;
     @FXML
     private TextField txtNombreCrear;
