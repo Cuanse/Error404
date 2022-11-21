@@ -3,34 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/controller/SignInFormController.java</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/controller/SignUpFormController.java</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Vista/PostsForm.fxml</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Modelo/Main.java</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Vista/CreatePostForm.fxml</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/controller/MainViewController.java</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Modelo/Usuario.java</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/controller/PostsFormController.java</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Modelo/Alerta.java</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/controller/AjustesPerfilController.java</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Modelo/Comentario.java</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/controller/PerfilController.java</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Modelo/Post.java</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Vista/AjustesPerfil.fxml</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Vista/Post.fxml</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Vista/Bitacora.fxml</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/controller/ComentariosPostController.java</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Modelo/Foro.java</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Modelo/Conexion.java</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/controller/PostController.java</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/controller/CreatePostFormController.java</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Vista/comentariosPost.fxml</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/controller/BitacoraController.java</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Vista/MainView.fxml</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Modelo/Credenciales.java</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Vista/Perfil.fxml</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Modelo/Perfil.java</file>
-            <file>file:/C:/Users/tique/OneDrive/Documents/NetBeansProjects/ProyectoError404Sprint1/src/Vista/SignUpForm.fxml</file>
+            <file>file:/C:/Users/alejo/Desktop/Laboratorios/Proyecto2022-versionAL/src/controller/PostsFormController.java</file>
+            <file>file:/C:/Users/alejo/Desktop/Laboratorios/Proyecto2022-versionAL/src/controller/CommentPostController.java</file>
+            <file>file:/C:/Users/alejo/Desktop/Laboratorios/Proyecto2022-versionAL/src/Vista/CommentPost.fxml</file>
+            <file>file:/C:/Users/alejo/Desktop/Laboratorios/Proyecto2022-versionAL/src/controller/PostController.java</file>
         </group>
     </open-files>
 </project-private>
