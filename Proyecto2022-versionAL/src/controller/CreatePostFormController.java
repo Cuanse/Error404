@@ -6,6 +6,7 @@
 package controller;
 
 import Modelo.Conexion;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,12 +14,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -45,6 +50,8 @@ public class CreatePostFormController implements Initializable {
     private Button btnLimpiarCrear;
     @FXML
     private Button btnEnviarCrear;
+    @FXML
+    private Button btnAmigosCrear;
 
     /**
      * Initializes the controller class.
@@ -54,7 +61,19 @@ public class CreatePostFormController implements Initializable {
         bd = Conexion.getBd();
         
     }    
+    private void TabNavegacion(String direccion) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/"+direccion+".fxml"));
 
+        Parent root = loader.load();
+
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(scene);
+        stage.showAndWait();
+    }
+    
     @FXML
     private void EnviarPost(MouseEvent event) throws SQLException {
         PreparedStatement ps = bd.prepareStatement("INSERT INTO POST (ID_PERFIL,ID_FORO,CONTENIDO,TITULO,ENABLED) VALUES(?,?,?,?,?)");
@@ -71,6 +90,23 @@ public class CreatePostFormController implements Initializable {
         stage = (Stage) source.getScene().getWindow();
         stage.close();
         
+    }
+
+    @FXML
+    private void Inicio(MouseEvent event) {
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    private void Perfil(MouseEvent event) throws IOException {
+        TabNavegacion("Perfil");
+    }
+
+    @FXML
+    private void Amigos(MouseEvent event) throws IOException {
+        TabNavegacion("Amigos");
     }
     
 }

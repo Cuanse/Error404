@@ -228,6 +228,7 @@ public class PostController implements Initializable {
 
     private void ReadPost(int posicion) throws IOException {
         postActual = posicion;
+        System.out.print(foros[foroActual].getPosts()[((pagActual - 1) * 2)+posicion].getID_POST()+foros[foroActual].getPosts()[((pagActual - 1) * 2)+posicion].getTitulo());
         ID_postActual = foros[foroActual].getPosts()[((pagActual - 1) * 2)+posicion].getID_POST();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/PostsForm.fxml"));
 
@@ -241,29 +242,8 @@ public class PostController implements Initializable {
         stage.showAndWait();
         LoadPosts(foroActual, (pagActual - 1) * 2);
     }
-
-    @FXML
-    private void Vbox1Clicked(MouseEvent event) throws IOException {
-        ReadPost(0);
-    }
-
-    @FXML
-    private void verPerfil(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/Perfil.fxml"));
-
-        Parent root = loader.load();
-
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setScene(scene);
-        stage.showAndWait(); // Espere a que Perfil dé una respuesta
-    }
-
-    @FXML
-    private void CrearPost(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/CreatePostForm.fxml"));
+private void TabNavegacion(String direccion) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/" + direccion + ".fxml"));
 
         Parent root = loader.load();
 
@@ -273,6 +253,21 @@ public class PostController implements Initializable {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.showAndWait();
+    }
+    @FXML
+    private void Vbox1Clicked(MouseEvent event) throws IOException {
+        ReadPost(0);
+    }
+
+    @FXML
+    private void verPerfil(MouseEvent event) throws IOException {
+        TabNavegacion("Perfil");
+        LoadPosts(foroActual, (pagActual - 1) * 2);
+    }
+
+    @FXML
+    private void CrearPost(MouseEvent event) throws IOException {
+        TabNavegacion("CreatePostForm");
         alarma.Information("Gracias Por la publicación");
         LoadPosts(foroActual, (pagActual - 1) * 2);
     }

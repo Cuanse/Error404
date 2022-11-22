@@ -32,7 +32,7 @@
                   </Label>
                </children>
             </VBox>
-            <Button fx:id="btnInicioPerfil" mnemonicParsing="false" onMouseClicked="#inicioPost" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #2ECC71; -fx-border-radius: 5px;" text="Inicio" textFill="WHITE" VBox.vgrow="ALWAYS">
+            <Button fx:id="btnInicioPerfil" mnemonicParsing="false" onMouseClicked="#Inicio" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #2ECC71; -fx-border-radius: 5px;" text="Inicio" textFill="WHITE" VBox.vgrow="ALWAYS">
                <font>
                   <Font size="24.0" />
                </font>
@@ -48,7 +48,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="btnCrearPerfil" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #2ECC71; -fx-border-radius: 5px;" text="Crear" textFill="WHITE" VBox.vgrow="ALWAYS">
+            <Button fx:id="btnCrearPerfil" mnemonicParsing="false" onMouseClicked="#CrearPost" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #2ECC71; -fx-border-radius: 5px;" text="Crear" textFill="WHITE" VBox.vgrow="ALWAYS">
                <font>
                   <Font size="24.0" />
                </font>
@@ -56,14 +56,14 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="btnAmigosPerfil" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #2ECC71; -fx-border-radius: 5px;" text="Amigos" textFill="WHITE">
+            <Button fx:id="btnAmigosPerfil" mnemonicParsing="false" onMouseClicked="#Amigos" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #2ECC71; -fx-border-radius: 5px;" text="Amigos" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
             <VBox alignment="BOTTOM_CENTER" prefHeight="106.0" prefWidth="250.0" VBox.vgrow="ALWAYS">
                <children>
-                  <Button fx:id="btnSalirPrfil" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #2ECC71;" text="Salir" textFill="WHITE" VBox.vgrow="ALWAYS">
+                  <Button fx:id="btnSalirPrfil" mnemonicParsing="false" onMouseClicked="#Inicio" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #2ECC71;" text="Salir" textFill="WHITE" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="30.0" />
                      </VBox.margin>

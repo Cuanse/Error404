@@ -23,6 +23,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
@@ -34,8 +35,9 @@ public class ComentariosPostController implements Initializable {
 
     private Connection bd;
     PostController info = new PostController();
+    ArrayList<String> coments = new ArrayList<String>();
     @FXML
-    private TableView<String> tablaComentarios;
+    private TableView tablaComentarios = new TableView();
 
     /**
      * Initializes the controller class.
@@ -48,12 +50,18 @@ public class ComentariosPostController implements Initializable {
             rs = bd.createStatement().executeQuery("SELECT * from COMENTARIO WHERE ID_POST = " + info.getID_postActual());
             if (rs.next()) {
                 ResultSet rs2;
-                ArrayList<String> Comentarios = new ArrayList<>();
+                ArrayList Comentarios = new ArrayList();
                 do {
                     rs2 = bd.createStatement().executeQuery("Select * from USUARIO where ID_USUARIO = " + rs.getInt("ID_USUARIO")); // buscamos los nombres de cada usuario que comentó el post
-                    Collections.addAll(Comentarios, rs2.getString("NOMBREUSUARIO") + " dice: " + rs.getString("CONTENIDO"));
+                    rs2.next();
+                    System.out.println(rs.getString("CONTENIDO"));
+                    coments.add(rs2.getString("NOMBREUSUARIO") + " dice: " + rs.getString("CONTENIDO"));
+                    
                 } while (rs.next());
-                tablaComentarios.setItems(FXCollections.observableArrayList(Comentarios));
+                //Collections.addAll(Comentarios, coments);
+                System.out.println(coments.get(0)+" "+coments.get(1));
+                tablaComentarios.setEditable(true);
+                tablaComentarios.setItems(FXCollections.observableArrayList(coments));
             } else {
                 new Alerta().Information("No hay comentarios, sé el primero!!");
             }
