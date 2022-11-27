@@ -55,7 +55,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="btnAmigosPost" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #2ECC71; -fx-border-radius: 5px;" text="Amigos" textFill="WHITE">
+            <Button fx:id="btnAmigosPost" mnemonicParsing="false" onMouseClicked="#Amigos" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #2ECC71; -fx-border-radius: 5px;" text="Amigos" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -78,7 +78,7 @@
          <children>
             <HBox alignment="BOTTOM_LEFT" prefHeight="75.0" prefWidth="600.0" style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
                <children>
-                  <Button fx:id="btnPref1" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5px;" text="Deportes">
+                  <Button mnemonicParsing="false" onMouseClicked="#PostsDeportesForo" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5px;" text="Deportes">
                      <HBox.margin>
                         <Insets bottom="3.0" left="10.0" right="5.0" />
                      </HBox.margin>
@@ -88,7 +88,7 @@
                         <Insets bottom="3.0" right="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="btnPref3" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-radius: 5px; -fx-background-radius: black; -fx-border-color: black;" text="Diseño Grafico">
+                  <Button mnemonicParsing="false" onMouseClicked="#PostsGuardados" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: grey; -fx-border-radius: 20px; -fx-background-radius: 20px; -fx-border-color: black;" text="Posts Guardados" textFill="WHITE">
                      <HBox.margin>
                         <Insets bottom="3.0" right="5.0" />
                      </HBox.margin>

@@ -24,7 +24,7 @@
       <VBox alignment="CENTER" prefHeight="28.0" prefWidth="800.0" style="-fx-background-color: #2ECC71;" />
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white;" GridPane.rowIndex="1">
          <children>
-            <ImageView fx:id="imgImagenCentral" fitHeight="335.0" fitWidth="528.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+            <ImageView fx:id="imgImagenCentral" fitHeight="374.0" fitWidth="817.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                <image>
                   <Image url="@../img/papucho.jpg" />
                </image>
