@@ -25,7 +25,7 @@
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #2ECC71;">
          <children>
-            <Button alignment="TOP_LEFT" contentDisplay="TOP" layoutY="20.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="182.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 5px;" text="Inicio" textFill="WHITE">
+            <Button alignment="TOP_LEFT" contentDisplay="TOP" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#Inicio" prefHeight="35.0" prefWidth="182.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 5px;" text="Inicio" textFill="WHITE">
                <VBox.margin>
                   <Insets left="80.0" top="120.0" />
                </VBox.margin>
@@ -33,7 +33,7 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" prefHeight="35.0" prefWidth="182.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 5px;" text="Perfil" textFill="WHITE">
+            <Button alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#Perfil" prefHeight="35.0" prefWidth="182.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 5px;" text="Perfil" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -41,7 +41,7 @@
                   <Insets left="80.0" top="20.0" />
                </VBox.margin>
             </Button>
-            <Button alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" prefHeight="35.0" prefWidth="182.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 5px;" text="Crear" textFill="WHITE">
+            <Button alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#CrearPost" prefHeight="35.0" prefWidth="182.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 5px;" text="Crear" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -49,7 +49,7 @@
                   <Insets left="80.0" top="20.0" />
                </VBox.margin>
             </Button>
-            <Button alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" prefHeight="35.0" prefWidth="182.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 5px;" text="Posts" textFill="WHITE">
+            <Button alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#Inicio" prefHeight="35.0" prefWidth="182.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 5px;" text="Posts" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -57,7 +57,7 @@
                   <Insets left="80.0" top="20.0" />
                </VBox.margin>
             </Button>
-            <Button alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" prefHeight="35.0" prefWidth="182.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 5px;" text="Amigos" textFill="WHITE">
+            <Button alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#Amigos" prefHeight="35.0" prefWidth="182.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 5px;" text="Amigos" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -65,7 +65,7 @@
                   <Insets left="80.0" top="20.0" />
                </VBox.margin>
             </Button>
-            <Button alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" prefHeight="35.0" prefWidth="182.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 5px;" text="Salir" textFill="WHITE">
+            <Button alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#Inicio" prefHeight="35.0" prefWidth="182.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 5px;" text="Salir" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -146,7 +146,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-background-color: white;">
+            <Button mnemonicParsing="false" onMouseClicked="#escribirComentario" style="-fx-background-color: white;">
                <StackPane.margin>
                   <Insets right="-300.0" top="250.0" />
                </StackPane.margin>

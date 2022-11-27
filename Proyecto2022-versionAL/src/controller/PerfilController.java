@@ -61,6 +61,8 @@ public class PerfilController implements Initializable {
     private Label lblCumplePerfil;
     @FXML
     private Label lblGeneroPerfil;
+    @FXML
+    private Button btnAmigosPerfil;
 
     /**
      * Initializes the controller class.
@@ -76,11 +78,17 @@ public class PerfilController implements Initializable {
         }
     }
 
-    @FXML
-    private void inicioPost(MouseEvent event) {
-        Node source = (Node) event.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
-        stage.close();
+    private void TabNavegacion(String direccion) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/" + direccion + ".fxml"));
+
+        Parent root = loader.load();
+
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(scene);
+        stage.showAndWait();
     }
 
     private void actualizarDatos() throws SQLException {
@@ -108,17 +116,25 @@ public class PerfilController implements Initializable {
 
     @FXML
     private void ajustesPerfil(MouseEvent event) throws IOException, SQLException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/AjustesPerfil.fxml"));
-
-        Parent root = loader.load();
-
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setScene(scene);
-        stage.showAndWait();
+        TabNavegacion("AjustesPerfil");
         actualizarDatos();
+    }
+
+    @FXML
+    private void Inicio(MouseEvent event) {
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    private void CrearPost(MouseEvent event) throws IOException {
+        TabNavegacion("CreatePostForm");
+    }
+
+    @FXML
+    private void Amigos(MouseEvent event) throws IOException {
+        TabNavegacion("Amigos");
     }
 
 }

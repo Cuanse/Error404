@@ -63,7 +63,18 @@ public class PostsFormController implements Initializable {
         
         
     }    
+    private void TabNavegacion(String direccion) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/"+direccion+".fxml"));
 
+        Parent root = loader.load();
+
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(scene);
+        stage.showAndWait();
+    }
     @FXML
     private void BorrarPost(MouseEvent event) throws SQLException {
         ResultSet rs = bd.createStatement().executeQuery("SELECT * from USUARIO WHERE ID_USUARIO = " + info.getNoCredenciales());
@@ -84,16 +95,7 @@ public class PostsFormController implements Initializable {
 
     @FXML
     private void leaveComment(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/comentariosPost.fxml"));
-
-        Parent root = loader.load();
-
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setScene(scene);
-        stage.showAndWait();
+        TabNavegacion("ComentariosPost");
     }
 
     @FXML
@@ -104,6 +106,37 @@ public class PostsFormController implements Initializable {
         ps.executeUpdate();
         Image image=new Image("/img/icons8-facebook-like-skin-type-3-48-iluminated.png");
         likeImg.setImage(image);
+    }
+
+    @FXML
+    private void escribirComentario(MouseEvent event) throws IOException {
+        TabNavegacion("CommentPost");
+    }
+
+    @FXML
+    private void Inicio(MouseEvent event) {
+        Stage stage = new Stage();
+        Node source = (Node) event.getSource();
+        stage = (Stage) source.getScene().getWindow();
+        stage.close();
+        
+    }
+
+    @FXML
+    private void Perfil(MouseEvent event) throws IOException {
+        TabNavegacion("Perfil");
+        
+    }
+
+    @FXML
+    private void CrearPost(MouseEvent event) throws IOException {
+        TabNavegacion("CreatePostForm");
+        
+    }
+
+    @FXML
+    private void Amigos(MouseEvent event) throws IOException {
+        TabNavegacion("Amigos");
     }
     
 }

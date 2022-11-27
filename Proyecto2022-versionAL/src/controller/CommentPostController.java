@@ -63,7 +63,7 @@ public class CommentPostController implements Initializable {
         if (!txtComentario.getText().equals("")) {
             PreparedStatement ps = bd.prepareStatement("INSERT INTO COMENTARIO (ID_USUARIO,ID_POST,CONTENIDO) values (?,?,?)");
             ps.setInt(1, info.getNoCredenciales()); // enviamos ID_USUARIO
-            ps.setInt(2, info.getPostActual()); // enviamos ID_POST
+            ps.setInt(2, info.getID_postActual()); // enviamos ID_POST
             ps.setString(3, contenido);
             ps.executeUpdate();
 
