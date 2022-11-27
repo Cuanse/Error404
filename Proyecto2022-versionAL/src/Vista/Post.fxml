@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -88,22 +90,36 @@
                         <Insets bottom="3.0" right="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#PostsGuardados" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: grey; -fx-border-radius: 20px; -fx-background-radius: 20px; -fx-border-color: black;" text="Posts Guardados" textFill="WHITE">
+                  <Button mnemonicParsing="false" onMouseClicked="#PostsGuardados" prefHeight="30.0" prefWidth="150.0" style="-fx-border-color: black; -fx-background-color: white; -fx-border-radius: 5px;" text="Posts Guardados">
                      <HBox.margin>
                         <Insets bottom="3.0" right="5.0" />
                      </HBox.margin>
                   </Button>
                   <HBox alignment="BOTTOM_RIGHT" prefHeight="73.0" prefWidth="126.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <Button fx:id="btnPrevPost" mnemonicParsing="false" onMouseClicked="#Prev" style="-fx-background-color: white; -fx-border-radius: 5px; -fx-border-color: black;" text="Prev">
+                        <Button fx:id="btnPrevPost" mnemonicParsing="false" onMouseClicked="#Prev" prefHeight="34.0" prefWidth="46.0" style="-fx-background-color: white; -fx-border-radius: 5px;">
                            <HBox.margin>
-                              <Insets bottom="3.0" right="3.0" />
+                              <Insets bottom="3.0" right="1.0" />
                            </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Desktop/Laboratorios/Error404-main/Proyecto2022-versionAL/src/img/back.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </Button>
-                        <Button fx:id="btnNextPost" mnemonicParsing="false" onMouseClicked="#Next" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5px;" text="Next">
+                        <Button fx:id="btnNextPost" mnemonicParsing="false" onMouseClicked="#Next" style="-fx-background-color: white; -fx-border-radius: 5px;">
                            <HBox.margin>
                               <Insets bottom="3.0" right="10.0" />
                            </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Desktop/Laboratorios/Error404-main/Proyecto2022-versionAL/src/img/next.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </Button>
                      </children>
                   </HBox>
@@ -160,6 +176,40 @@
                   </VBox>
                </children>
             </Pane>
+            <HBox alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="600.0">
+               <children>
+                  <Button mnemonicParsing="false" style="-fx-background-color: white;">
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Desktop/Laboratorios/Error404-main/Proyecto2022-versionAL/src/img/icons8-trend-64.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-color: white;">
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Desktop/Laboratorios/Error404-main/Proyecto2022-versionAL/src/img/icons8-popularity-32.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-color: white;">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Desktop/Laboratorios/Error404-main/Proyecto2022-versionAL/src/img/icons8-history-24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
             <HBox alignment="CENTER" prefHeight="54.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
                <children>
                   <Label onMouseClicked="#pag1" prefHeight="17.0" prefWidth="12.0" text="1" />
