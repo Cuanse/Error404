@@ -165,7 +165,7 @@
                <graphic>
                   <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../Desktop/Laboratorios/Error404-main/Proyecto2022-versionAL/src/img/icons8-add-to-favorites-40.png" />
+                        <Image url="@../img/icons8-add-to-favorites-30.png" />
                      </image>
                   </ImageView>
                </graphic>

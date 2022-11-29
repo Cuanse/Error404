@@ -104,7 +104,7 @@
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../Desktop/Laboratorios/Error404-main/Proyecto2022-versionAL/src/img/back.png" />
+                                    <Image url="@../img/back.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -116,7 +116,7 @@
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../Desktop/Laboratorios/Error404-main/Proyecto2022-versionAL/src/img/next.png" />
+                                    <Image url="@../img/next.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -182,7 +182,7 @@
                      <graphic>
                         <ImageView fitHeight="36.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../Desktop/Laboratorios/Error404-main/Proyecto2022-versionAL/src/img/icons8-trend-64.png" />
+                              <Image url="@../img/icons8-trend-64.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -191,7 +191,7 @@
                      <graphic>
                         <ImageView fitHeight="48.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../Desktop/Laboratorios/Error404-main/Proyecto2022-versionAL/src/img/icons8-popularity-32.png" />
+                              <Image url="@../img/icons8-popularity-32.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -200,7 +200,7 @@
                      <graphic>
                         <ImageView fitHeight="34.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../Desktop/Laboratorios/Error404-main/Proyecto2022-versionAL/src/img/icons8-history-24.png" />
+                              <Image url="@../img/icons8-history-24.png" />
                            </image>
                         </ImageView>
                      </graphic>

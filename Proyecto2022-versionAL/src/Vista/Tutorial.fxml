@@ -31,7 +31,7 @@
                <graphic>
                   <ImageView fitHeight="49.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../Desktop/Laboratorios/Error404-main/Proyecto2022-versionAL/src/img/icons8-last-64.png" />
+                        <Image url="@../img/icons8-last-64.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -56,7 +56,7 @@
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../Desktop/Laboratorios/Error404-main/Proyecto2022-versionAL/src/img/back.png" />
+                        <Image url="@../img/back.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -112,7 +112,7 @@
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../Desktop/Laboratorios/Error404-main/Proyecto2022-versionAL/src/img/next.png" />
+                        <Image url="@../img/next.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
